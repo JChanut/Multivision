@@ -1,5 +1,5 @@
 var express = require('express'),
-    stylus = require('stylus')
+    stylus = require('stylus'),
     mongoose = require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
