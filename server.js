@@ -3,6 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+console.log('Application runing in ' + env + ' environment...');
 
 var app = express();
 
@@ -24,7 +25,13 @@ app.configure(function () {
     app.use(express.static(__dirname + '/public'));
 });
 
-mongoose.connect('mongodb://localhost/multivision');
+if (env == 'development'){
+    mongoose.connect('mongodb://localhost/multivision');
+}
+else{
+    mongoose.connect('mongodb://jchanut:multivision@ds031359.mongolab.com:31359/multivision-jchanut');
+}
+
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error...'));
