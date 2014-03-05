@@ -2,7 +2,7 @@ var express = require('express'),
     stylus = require('stylus');
 
 module.exports = function (app, config) {
-    function compile(str, path) {
+    function stylusCompile(str, path) {
         return stylus(str).set('filename', path);
     }
 
@@ -13,7 +13,7 @@ module.exports = function (app, config) {
         app.use(express.bodyParser());
         app.use(stylus.middleware({
             src: config.rootPath + '/public',
-            compile: compile
+            compile: stylusCompile
         }));
         app.use(express.static(config.rootPath + '/public'));
     });
