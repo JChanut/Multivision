@@ -1,4 +1,5 @@
 var express = require('express'),
+    passport = require('passport'),
     stylus = require('stylus');
 
 module.exports = function (app, config) {
