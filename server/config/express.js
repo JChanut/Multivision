@@ -12,7 +12,9 @@ module.exports = function (app, config) {
         app.set('view engine', 'jade');
         app.use(express.logger('dev'));
         app.use(express.cookieParser());
-        app.use(express.bodyParser());
+//        app.use(express.bodyParser());
+        app.use(express.json());
+        app.use(express.urlencoded());
         app.use(express.session({secret: 'multi vision unicorns'}));
         app.use(passport.initialize());
         app.use(passport.session());
