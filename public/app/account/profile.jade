@@ -1,0 +1,27 @@
+.container(data-ng-controller="mvProfileCtrl as vm")
+    .well
+        form.form-horizontal(name="profileForm")
+            fieldset
+                legend User Profile
+                .form-group
+                    label.col-md-2.control-label(for="email") Email
+                    .col-md-10
+                        input.form-control(name="email", type="email", placeholder="Email", data-ng-model="vm.email", required)
+                .form-group
+                    label.col-md-2.control-label(for="fname") First Name
+                    .col-md-10
+                        input.form-control(name="fname", type="text", placeholder="First Name", data-ng-model="vm.fname", required)
+                .form-group
+                    label.col-md-2.control-label(for="lname") Last Name
+                    .col-md-10
+                        input.form-control(name="lname", type="text", placeholder="Last Name", data-ng-model="vm.lname", required)
+                .form-group
+                    label.col-md-2.control-label(for="password") Password
+                    .col-md-10
+                        input.form-control(name="password", type="password", placeholder="Password", data-ng-model="vm.password")
+                .form-group
+                    .col-md-10.col-md-offset-2
+                        .pull-right
+                            button.btn.btn-primary(data-ng-click="vm.update()", data-ng-disabled="signupForm.$invalid") Submit
+                            | &nbsp;
+                            a.btn.btn-default(href="/") Cancel
