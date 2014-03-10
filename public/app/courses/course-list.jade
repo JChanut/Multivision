@@ -1,11 +1,18 @@
-.container(data-ng-controller="mvCourseListCtrl as vm")
+.container.top-padding-med(data-ng-controller="mvCourseListCtrl as vm")
+    .pull-right
+        .form.form-inline
+            .form-group
+                input.form-control(data-ng-model="vm.searchText", placeholder="Filter")
+            .form-group.margin-left-med
+                select.form-control(data-ng-model="vm.sortOrder",
+                data-ng-options="item.value as item.text for item in vm.sortOptions")
     table.table.table-hover.table-striped.table-condensed
         thead
             tr
                 th Title
                 th Publish Date
         tbody
-            tr(ng-repeat="course in vm.courses")
+            tr(ng-repeat="course in vm.courses | filter: vm.searchText | orderBy: vm.sortOrder")
                 td {{course.title}}
                 td {{course.published | date}}
 
