@@ -1,5 +1,5 @@
-.container
+.container(data-ng-controller="mvUserListCtrl as vm")
     table.table
-        tr(data-ng-repeat="user in users")
+        tr(data-ng-repeat="user in vm.users")
             td {{user.firstName + ' ' + user.lastName}}
 

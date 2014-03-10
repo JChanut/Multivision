@@ -1,3 +1,4 @@
-angular.module('app').controller('mvUserListCtrl', function ($scope, mvUser) {
-    $scope.users = mvUser.query();
-});
+angular.module('app').controller('mvUserListCtrl', ['mvUser', function (mvUser) {
+    var vm = this;
+    vm.users = mvUser.query();
+}]);

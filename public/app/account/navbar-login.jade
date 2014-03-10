@@ -1,20 +1,20 @@
-.navbar-right(data-ng-controller="mvNavBarLoginCtrl")
-    form.navbar-form(data-ng-hide="identity.isAuthenticated()")
+.navbar-right(data-ng-controller="mvNavBarLoginCtrl as vm")
+    form.navbar-form(data-ng-hide="vm.identity.isAuthenticated()")
         ul.nav.navbar-nav
             li
                 a(href="/signup") Sign up
         .form-group
-            input.form-control(placeholder="Email", ng-model="username")
+            input.form-control(placeholder="Email", data-ng-model="vm.username")
         .form-group
-            input.form-control(type="password", placeholder="Password", ng-model="password")
-        button.btn.btn-primary(data-ng-click="signin(username, password)") Sign In
-    ul.nav.navbar-nav.navbar-right(data-ng-show="identity.isAuthenticated()")
+            input.form-control(type="password", placeholder="Password", data-ng-model="vm.password")
+        button.btn.btn-primary(data-ng-click="vm.signin(vm.username, vm.password)") Sign In
+    ul.nav.navbar-nav.navbar-right(data-ng-show="vm.identity.isAuthenticated()")
         li.dropdown
             a.dropdown-toggle(href="", data-toggle="dropdown")
-                | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+                | {{vm.identity.currentUser.firstName + " " + vm.identity.currentUser.lastName}}
                 b.caret
             ul.dropdown-menu
-                li(data-ng-show="identity.currentUser.isAdmin()")
+                li(data-ng-show="vm.identity.currentUser.isAdmin()")
                     a(href="/admin/users") User Admin
                 li
-                    a(href="", data-ng-click="signout()") Sign Out
+                    a(href="", data-ng-click="vm.signout()") Sign Out
