@@ -1,21 +1,20 @@
 describe('mvMainCtrl', function () {
-    var scope, ctrl;
+    var ctrl;
 
     beforeEach(function() {
         module('app');
-        inject(function ($rootScope, $controller) {
-            scope = $rootScope.$new(),
-            ctrl = $controller('mvMainCtrl', {$scope: scope});
+        inject(function ($controller) {
+            ctrl = $controller('mvMainCtrl');
         });
     });
 
     describe('courses', function () {
         it('should be an array', function() {
-            scope.courses.should.be.a('Array');
+            ctrl.courses.should.be.a('Array');
         })
 
         it('should return all courses', function() {
-            scope.courses.should.have.length(15);
+             ctrl.courses.should.have.length(15);
         });
     });
 });
