@@ -1,5 +1,5 @@
-angular.module('app').controller('mvCourseDetailCtrl', ['mvCachedCourse', '$routeParams',
-    function(mvCachedCourse, $routeParams) {
+angular.module('app').controller('mvCourseDetailCtrl', ['mvCachedCourse', '$routeParams', 'mvUnderscore',
+    function(mvCachedCourse, $routeParams, _) {
         var mv = this;
 
         mvCachedCourse.query().$promise.then(function(collection) {

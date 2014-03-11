@@ -21,8 +21,8 @@ describe('mvMainCtrl', function () {
         });
     });
 
-    describe('courses', function () {
-        it('should be an array', function () {
+    describe('courses', function() {
+        it('should be an array', function() {
             var ctrl = createController();
             $httpBackend.flush();
             ctrl.courses.should.be.a('Array');
