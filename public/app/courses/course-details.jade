@@ -1,0 +1,12 @@
+.container(data-ng-controller="mvCourseDetailCtrl as mv")
+    h1 {{mv.course.title}}
+        .row
+            .col-md-6
+                h3(data-ng-show="mv.course.featured") Featured
+                h3 Published on {{mv.course.published | date}}
+
+            .col-md-6
+                .panel.panel-primary
+                    .panel-heading Tags
+                    .panel-body
+                            div(data-ng-repeat="tag in mv.course.tags") {{tag}}
