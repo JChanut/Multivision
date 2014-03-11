@@ -2,8 +2,8 @@ angular.module('app').controller('mvCourseDetailCtrl', ['mvCachedCourse', '$rout
     function(mvCachedCourse, $routeParams) {
         var mv = this;
 
-        mvCachedCourse.query().$promise.then(function (collection) {
-            collection.forEach(function(course) {
+        mvCachedCourse.query().$promise.then(function(collection) {
+            _.each(collection, function(course) {
                 if (course._id === $routeParams.id) {
                     mv.course = course;
                 }
