@@ -23,7 +23,7 @@ describe('mvCourseDetailCtrl', function () {
     });
 
     describe('course', function () {
-        it('should be an object', function () {
+        it('should be a course object', function () {
             routeParams.id = 1;
             var ctrl = createController();
             $httpBackend.flush();
