@@ -23,7 +23,8 @@
     "cookie-parser": "~1.0.1",
     "express-session": "~1.0.2",
     "body-parser": "~1.0.0",
-    "serve-static": "~1.0.2"
+    "serve-static": "~1.0.2",
+    "compression": "~1.0.1"
   },
   "devDependencies": {
     "bower": "~1.2.8",
