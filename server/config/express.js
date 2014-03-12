@@ -1,4 +1,4 @@
-var morgan = require('morgan'),
+var logger = require('morgan'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
@@ -13,7 +13,7 @@ module.exports = function (app, config) {
 
     app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
-    app.use(morgan('dev')); // Logger middleware
+    app.use(logger('dev')); // Logger middleware
     app.use(bodyParser());
     app.use(cookieParser());
     app.use(session({secret: 'multi vision unicorns'}));
