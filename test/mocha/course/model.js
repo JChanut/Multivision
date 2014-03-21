@@ -15,7 +15,7 @@ describe('Course Model', function () {
         done();
     });
 
-    describe('Method Save', function () {
+    describe('Save', function () {
         it('should able to save without problem', function (done) {
             return course.save(function (err) {
                 should.not.exist(err);

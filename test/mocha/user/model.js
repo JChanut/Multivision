@@ -1,16 +1,17 @@
 var should = require('chai').should(),
+    encrypt = require('../../../server/utilities/encryption'),
     User = require('mongoose').model('User');
 
 describe('User Model', function () {
-    var user, user2;
+    var user, user2, salt = encrypt.createSalt(), hash = encrypt.hashPwd(salt, 'password');
 
     beforeEach(function (done) {
         user = new User({
             firstName:'First name',
             lastName:'Last name',
             username:'user',
-            salt: 'salt',
-            hashed_pwd: 'hash',
+            salt: salt,
+            hashed_pwd: hash,
             roles: ['admin']
         });
         user2 = new User(user);
@@ -18,7 +19,7 @@ describe('User Model', function () {
         done();
     });
 
-    describe('Method Save', function () {
+    describe('Save', function () {
 
 //        it('should begin with no users', function(done) {
 //            User.find({}, function(err, users) {
@@ -77,6 +78,26 @@ describe('User Model', function () {
                 should.exist(err);
                 done();
             });
+        });
+    });
+
+    describe('hasRole', function () {
+        it('should return true if user has role', function () {
+            user.hasRole('admin').should.be.true;
+        });
+
+        it('should return false if user has not role', function () {
+            user.hasRole('user').should.be.false;
+        });
+    });
+
+    describe('authenticate', function () {
+        it('should return true if password match', function () {
+            user.authenticate('password').should.be.true;
+        });
+
+        it('should return false if password do not match', function () {
+            user.authenticate('WrongPassword').should.be.false;
         });
     });
 
