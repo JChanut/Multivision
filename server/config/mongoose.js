@@ -10,7 +10,9 @@ module.exports = function(config) {
         console.log('multivision db opened');
     });
 
-    userModel.createDefaultUsers();
+    if (config.createDefaultData){
+        userModel.createDefaultUsers();
 
-    courseModel.createDefaultCourses();
+        courseModel.createDefaultCourses();
+    }
 }
