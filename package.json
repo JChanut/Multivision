@@ -4,7 +4,7 @@
   "description": "Extreme Tech Training",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "test": "node ./test/testrunner.js"
   },
   "engines": {
     "node": "0.10.x",
