@@ -23,5 +23,6 @@ karma.server.start(
             'public/app/app.js'
         ]
     }
-)
-//./node_modules/.bin/karma start --single-run --browsers PhantomJS
+);
+
+//./node_modules/karma/bin/karma start --single-run --browsers PhantomJS
