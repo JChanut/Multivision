@@ -28,9 +28,9 @@ gulp.task('mocha-test', function () {
 });
 
 gulp.task('lint', function() {
-    return gulp.src('./public/app/**/*.js')
+    return gulp.src(['./public/app/**/*.js', './server/**/*.js'])
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 
