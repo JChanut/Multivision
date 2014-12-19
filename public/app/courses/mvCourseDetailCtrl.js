@@ -7,7 +7,7 @@ angular.module('app').controller('mvCourseDetailCtrl', ['mvCachedCourse', '$rout
                 if (course._id === $routeParams.id) {
                     mv.course = course;
                 }
-            })
+            });
         });
     }]
 );

@@ -12,7 +12,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', ['$http', '$location', 'mv
             else {
                 mvNotifier.notify('Username/Password combination incorrect');
             }
-        })
+        });
     };
 
     vm.signout = function() {
@@ -21,6 +21,6 @@ angular.module('app').controller('mvNavBarLoginCtrl', ['$http', '$location', 'mv
             vm.password = "";
             mvNotifier.notify('You have successfully signed out!');
             $location.path('/');
-        })
+        });
     };
 }]);

@@ -32,5 +32,5 @@ angular.module('app').run(function($rootScope, $location) {
         if(rejection === 'not authorized') {
             $location.path('/');
         }
-    })
-})
+    });
+});

@@ -4,4 +4,4 @@ angular.module('app').factory('mvCourse', ['$resource', function($resource){
     });
 
     return CourseResource;
-}])
+}]);

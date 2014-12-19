@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var karma = require('karma').server;
 var mocha = require('gulp-mocha');
 var exit = require('gulp-exit');
+var jshint = require('gulp-jshint');
 
 process.env.NODE_ENV = 'test';
 
@@ -24,6 +25,12 @@ gulp.task('mocha-test', function () {
                 server: require('./server')
             }
         })).pipe(exit());
+});
+
+gulp.task('lint', function() {
+    return gulp.src('./public/app/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 

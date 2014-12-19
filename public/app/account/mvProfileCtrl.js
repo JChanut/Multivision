@@ -11,7 +11,7 @@ angular.module('app').controller('mvProfileCtrl', ['mvAuth', 'mvIdentity', 'mvNo
                 username: mv.email,
                 firstName: mv.fname,
                 lastName: mv.lname
-            }
+            };
 
             if(mv.password && mv.password.length > 0) {
                 newUserData.password = mv.password;
