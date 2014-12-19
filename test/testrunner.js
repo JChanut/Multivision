@@ -26,3 +26,4 @@ karma.server.start(
 );
 
 //./node_modules/karma/bin/karma start --single-run --browsers PhantomJS
+// NODE_ENV=test mocha test/mocha --recursive --require server.js
