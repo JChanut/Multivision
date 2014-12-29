@@ -24,8 +24,8 @@ exports.createUser = function(req, res, next) {
         req.logIn(user, function(err) {
             if(err) {return next(err);}
             res.send(user);
-        })
-    })
+        });
+    });
 };
 
 exports.updateUser = function(req, res, next) {

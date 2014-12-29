@@ -20,7 +20,7 @@ userSchema.methods = {
     hasRole: function(role) {
         return this.roles.indexOf(role) > -1;
     }
-}
+};
 var User = mongoose.model('User', userSchema);
 
 function createDefaultUsers()

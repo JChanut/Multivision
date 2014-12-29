@@ -20,4 +20,4 @@ module.exports = {
         db: 'mongodb://jchanut:multivision@ds031359.mongolab.com:31359/multivision-jchanut',
         createDefaultData: true
     }
-}
+};

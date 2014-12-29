@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     courseModel = require('../models/Course');
 
 module.exports = function(config) {
-    mongoose.connect(config.db)
+    mongoose.connect(config.db);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error...'));
     db.once('open', function callback() {
@@ -15,4 +15,4 @@ module.exports = function(config) {
 
         courseModel.createDefaultCourses();
     }
-}
+};
