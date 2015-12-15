@@ -5,13 +5,13 @@ module.exports = {
     development: {
         rootPath: rootPath,
         port: process.env.PORT || 3000,
-        db: 'mongodb://localhost/multivision',
+        db: 'mongodb://192.168.99.100/multivision',
         createDefaultData: true
     },
     test: {
         rootPath: rootPath,
         port: process.env.PORT || 3001,
-        db: 'mongodb://localhost/multivision-test',
+        db: 'mongodb://192.168.99.100/multivision-test',
         createDefaultData: false
     },
     production: {
