@@ -19,4 +19,8 @@ You can use docker, for starting your mongo server :
 $ docker run --name multivision-mongo -p 27017:27017 -d mongo
 ```
 
-Testing : gulp test
+Testing
+-------
+```bash
+$ gulp test
+```
