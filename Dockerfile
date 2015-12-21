@@ -1,4 +1,4 @@
-FROM pmm/node
+FROM node:latest
 COPY . /src
 WORKDIR /src
 

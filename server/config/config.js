@@ -5,7 +5,7 @@ module.exports = {
     development: {
         rootPath: rootPath,
         port: process.env.PORT || 3000,
-        db: 'mongodb://192.168.99.100/multivision',
+        db: 'mongodb://mongo/multivision',
         createDefaultData: true
     },
     test: {
